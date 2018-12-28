@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cardview_height">
+
+    <ImageView
+        android:id="@+id/process_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/spacing_large"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        android:src="@drawable/process_4"
+        android:layout_alignParentTop="true"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:background="?android:attr/listDivider"
+        android:layout_below="@+id/process_img"/>
+
+    <RelativeLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:layout_below="@+id/divider">
+
+        <TextView
+            android:id="@+id/inform_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_message"
+            android:padding="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/spacing_large"/>
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_square_orange"
+            android:padding="0dp"
+            android:layout_marginRight="@dimen/spacing_large"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_content_height"
+        android:orientation="horizontal"
+        android:layout_below="@+id/info_layout"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/payment_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:listSelector="@color/colorPrimary"/>
+
+    </LinearLayout>
+</RelativeLayout>
