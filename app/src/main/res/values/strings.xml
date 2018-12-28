@@ -22,4 +22,31 @@
     <!-- maps activity -->
     <string name="title_activity_maps">Map</string>
 
+    <!-- fragment -->
+    <string name="picking_time_message">픽업시간을 선택해주세요</string>
+    <string name="picking_time">픽업시간</string>
+    <string name="target_time">도착시간</string>
+
+    <string name="item_reg_message">물품 정보를 입력해주세요</string>
+    <string name="title_image_register">사진 등록</string>
+    <string name="item_info">상세 설명</string>
+    <string name="item_info_hint">물품에 대해 알려주세요!(100자 이내)</string>
+
+    <string name="target_info_message">받는 분의 정보를 입력해주세요</string>
+    <string name="recipient_name">성함</string>
+    <string name="recipient_phone">전화번호</string>
+
+    <string name="payment_message">결제정보를 확인해주세요</string>
+
+    <!-- StringLib -->
+    <string name="skip_string">...</string>
+
+    <!-- Image Register -->
+    <string name="no_image_ready">이미지를 준비중입니다. 잠시 후에 다시 시도해주세요</string>
+    <string name="no_image_selected">이미지를 먼저 선택해주세요</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location_icon">location_icon</string>
+
 </resources>

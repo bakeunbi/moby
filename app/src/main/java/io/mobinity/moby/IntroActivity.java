@@ -1,5 +1,6 @@
 package io.mobinity.moby;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.view.WindowManager;
 
 public class IntroActivity extends AppCompatActivity {
 
+    @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +19,11 @@ public class IntroActivity extends AppCompatActivity {
         //상태바 제거
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Handler handler = new Handler() {
+        Handler handler;
+        handler = new Handler() {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                startActivity(new Intent(IntroActivity.this, WelcomeActivity.class));
+                startActivity(new Intent(IntroActivity.this, MapsActivity.class));
                 finish();
             }
         };

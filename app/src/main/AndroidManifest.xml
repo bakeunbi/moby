@@ -13,22 +13,34 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"><!--ACTION-VIEW intent가 하나도 없어서 추가함 -->
+        tools:ignore="GoogleAppIndexingWarning"> <!-- ACTION-VIEW intent가 하나도 없어서 추가함 -->
 
-        <!--구글 맵 API 인증키 -->
+        <!-- Android 7.0 이상 fileURI가 직접 노출되지 않도록 API 변경-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="io.mobinity.moby.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+
+        </provider>
+        <!-- 구글 맵 API 인증키 -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <!--protocolVersion exception handling-->
+        <!-- protocolVersion exception handling -->
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
@@ -50,6 +62,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
+        <activity android:name=".RouteActivity" />
     </application>
 
 </manifest>
